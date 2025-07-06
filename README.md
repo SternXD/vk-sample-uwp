@@ -1,10 +1,10 @@
-## UWP SDL GL Sample
+## UWP VK Sample
 
-This is a basic sample to showcase OpenGL working on UWP via Mesa3D's gallium driver.  See deps/README.md for more info on dependencies
+This is a basic sample to showcase Vulkan working on UWP via Ashes's D3D11 driver.  
 
 ## Running
 Open the solution and build the project.  The build should run locally and on an Xbox series device.
 
 ### Special Thanks
 
-- Aerisarn for his amazing work on mesa-uwp and SDL
+- Dragon joker for his amazing work on Ashes.
