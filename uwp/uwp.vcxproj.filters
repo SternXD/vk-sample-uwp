@@ -30,6 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="uwp_TemporaryKey.pfx" />
-    <None Include="..\deps\bin\ashesXBoxRenderer_icd.json" />
+    <None Include="..\deps\bin\dzn_icd.x86_64.json" />
   </ItemGroup>
 </Project>

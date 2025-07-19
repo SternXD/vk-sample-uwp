@@ -382,7 +382,7 @@ int SDL_main(int argc, char* argv[])
         SDL_WINDOWPOS_UNDEFINED,
         640,
         480,
-        SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL
+        SDL_WINDOW_SHOWN
     );
     if (!window) {
         logError(std::string("SDL window creation failed: ") + SDL_GetError());
@@ -393,7 +393,7 @@ int SDL_main(int argc, char* argv[])
 
     try {
         std::string fullDir = "E:\\VK";
-        std::string icd_json_path = "./ashesXBoxRenderer_icd.json";
+        std::string icd_json_path = "./uwp_icd.x86_64.json";
         std::wstring w_icd_json_path(icd_json_path.begin(), icd_json_path.end());
         SetEnvironmentVariableW(L"VK_ICD_FILENAMES", w_icd_json_path.c_str());
         SetEnvironmentVariableW(L"VK_LOADER_DEBUG", L"all"); // NEEDED hack the entire magic relies on this thats why only C++ suports VK
@@ -408,10 +408,10 @@ int SDL_main(int argc, char* argv[])
         }
         logInfo("Loaded base loader DLL successfully.");
 
-        std::wstring customICDName = L"ashesXBoxRenderer.dll";
+        std::wstring customICDName = L"vulkan_dzn.dll";
         HINSTANCE customIcdDll = LoadPackagedLibrary(customICDName.c_str(), 0);
         if (!customIcdDll) {
-            logError("Failed to load ashesD3D11Rendererd.dll");
+            logError("Failed to load vulkan_dzn.dll");
             FreeLibrary(baseLoaderDll);
             SDL_DestroyWindow(window);
             SDL_Quit();

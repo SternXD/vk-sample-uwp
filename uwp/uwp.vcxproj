@@ -46,7 +46,7 @@
     <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <ProjectName>uwp_gl_sample</ProjectName>
+    <ProjectName>uwp_vk_sample</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -297,9 +297,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\deps\bin\ashesXBoxRenderer_icd.json">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
+    <Content Include="..\deps\bin\uwp_icd.x86_64.json">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="uwp_TemporaryKey.pfx" />
   </ItemGroup>
 </Project>
