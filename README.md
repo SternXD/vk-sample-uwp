@@ -2,6 +2,9 @@
 
 This is a basic sample demonstrating Vulkan graphics API working on UWP (Universal Windows Platform) via Mesa3D's DZN driver. The DZN driver translates Vulkan API calls to DirectX 12, enabling Vulkan applications to run on UWP platforms including Xbox Series X|S.
 
+### Image of Vulkan Example Running on a Series S
+<img width="1275" height="720" alt="image" src="https://github.com/user-attachments/assets/aa0cf4f4-8f54-4f5b-80d2-84c310cf7c00" />
+
 ## Architecture
 
 The project uses the following components:

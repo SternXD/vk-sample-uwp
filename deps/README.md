@@ -1,8 +1,25 @@
 # Dependencies
 
-The sample's dependencies are comprised of the following projects:
+This folder contains all the runtime and development dependencies for the UWP Vulkan sample.
 
-- Aerisarn's mesa-uwp fork: https://github.com/aerisarn/mesa-uwp
-- Aerisarn's SDL fork that adds OpenGL compatibiliy on UWP: https://github.com/aerisarn/sdl-uwp-gl
-  - Note: Built using the VisualC-WinRT project
-- GLAD for loading GL extensions/functions
+## Runtime Dependencies (bin/)
+
+- **vulkan-1.dll** - Standard Vulkan loader library
+- **vulkan_dzn.dll** - Mesa3D DZN (Dozen) driver for Vulkan-to-DirectX12 translation (https://github.com/SternXD/mesa-uwp)
+- **uwp_icd.x86_64.json** - Vulkan ICD configuration file that registers the DZN driver
+- **SDL2.dll** - SDL2 library for cross-platform window management
+
+## Development Dependencies
+
+### Headers (include/)
+- **SDL2/** - SDL2 development headers for window management and input
+- **glad/** - GLAD OpenGL/Vulkan function loader headers
+- **KHR/** - Khronos platform-specific headers
+
+### Libraries (lib/)
+- **SDL2.lib** - SDL2 import library for linking
+- **vulkan_dzn.lib** - DZN driver import library
+
+## Architecture
+
+The DZN driver enables Vulkan API support on UWP by translating Vulkan calls to DirectX 12. This allows Vulkan applications to run on Xbox Series X|S and other UWP platforms that don't have native Vulkan drivers.
